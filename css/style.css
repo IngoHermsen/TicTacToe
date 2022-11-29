@@ -1,0 +1,73 @@
+/* Basics */
+
+body {
+    color: white !important;
+    background-color: black !important;
+    height: 40px;
+    width: 100vw;
+    font-family: 'Open Sans' !important;
+
+}
+
+header {
+    height: 140px;
+    border-bottom: 2px solid white;
+    font-family: 'Rock Salt';
+}
+
+h1 {
+    font-size: 75px !important;
+}
+
+/* header Letters */
+
+.headerX {
+    color: blue;
+}
+
+.headerO {
+    color: brown;
+}
+
+/* formular */
+
+.startScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    font-family: 'Open Sans' !important;
+    font-weight: 600;
+}
+
+input {
+    text-align: center;
+    border-radius: 10px;
+}
+
+.startScreenButton {
+    color: rgb(255, 255, 255);
+    background-color: grey;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 10px;
+    user-select: none;
+}
+
+
+#namesButton {
+    background-color: unset;
+    color: rgb(255, 255, 255);
+}
+
+.startScreenButton:hover {
+    color: unset;
+    cursor: pointer;
+    background-color: rgb(110, 109, 109) !important;
+
+}
+
+
+
