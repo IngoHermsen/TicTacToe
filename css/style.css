@@ -1,11 +1,12 @@
 /* Basics */
 
 body {
-    color: white !important;
-    background-color: black !important;
+    color: rgb(236, 172, 33) !important;
+    background-color: rgb(29, 94, 99) !important;
     height: 40px;
     width: 100vw;
     font-family: 'Open Sans' !important;
+    position: relative;
 
 }
 
@@ -16,25 +17,41 @@ header {
 }
 
 h1 {
+    display: flex;
     font-size: 75px !important;
+}
+
+b {
+    font-family: 'Rock Salt';
+    letter-spacing: 3px;
+}
+
+/* help classes */
+
+.unselectable {
+    pointer-events: none;
+}
+
+.orangeColor {
+    color: rgb(236, 172, 33) !important;
+    transition: all 600ms ease-in-out;
 }
 
 /* header Letters */
 
-.headerX {
-    color: blue;
-}
-
-.headerO {
-    color: brown;
+.headerLetter {
+    color: rgb(255, 255, 255);
 }
 
 /* formular */
 
-.startScreen {
+#startScreen {
+    background-color: rgb(29, 94, 99);
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 form {
@@ -45,11 +62,12 @@ form {
 input {
     text-align: center;
     border-radius: 10px;
+    width: 200px !important;
 }
 
 .startScreenButton {
-    color: rgb(255, 255, 255);
-    background-color: grey;
+    color: rgb(236, 172, 33);
+    background-color: unset;
     text-decoration: none;
     border: 1px solid white;
     border-radius: 10px;
@@ -57,17 +75,168 @@ input {
 }
 
 
-#namesButton {
-    background-color: unset;
-    color: rgb(255, 255, 255);
-}
-
 .startScreenButton:hover {
     color: unset;
     cursor: pointer;
-    background-color: rgb(110, 109, 109) !important;
+    background-color: white !important;
+    transform: scale(1.1);
+    transition: all 225ms ease-out;
 
 }
 
+#namesButton {
+    background-color: unset;
+    color: rgb(236, 172, 33);
+}
+
+/* game */
+
+#game {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+}
+
+.gameArea {
+    height: calc(100vh - 140px) !important;
+    position: relative;
+}
+
+.playersName {
+    color: white;
+}
+
+#gameGrid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 450px;
+    width: 450px;
+
+}
+
+.box {
+    font-family: 'Rock Salt';
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgb(236, 172, 33);
+    border-collapse: collapse;
+}
+
+.box:hover {
+    cursor: pointer;
+}
+
+.currentPlayer {
+    height: 100px;
+    text-align: center;
+}
+
+#game b {
+    color: white;
+}
+
+.endScreenText span:first-child{
+    font-size: 45px ;
+
+}
+
+.gameFooter a {
+    text-decoration: none;
+    color: rgb(236, 172, 33);
+    border: 1px solid white;
+    border-radius: 10px;
+
+}
+
+.gameFooter a:hover {
+    color: unset;
+    background-color: white;
+    transform: scale(1.1);
+    transition: all 225ms ease-in-out;
+}
+
+@media screen and (max-width: 915px) {
+    #game {
+        height: 90%;
+    }
+}
 
 
+@media screen and (max-width: 649px) {
+    h1 {
+        font-size: 60px !important;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    h1 {
+        font-size: 60px !important;
+    }
+
+
+
+    #startScreen div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+
+    }
+
+}
+
+@media screen and (max-width: 460px) {
+    h1 div {
+        display: none;
+    }
+
+    h1 span:first-child {
+        margin-right: 15px;
+    }
+
+    h1 span:last-child {
+        margin-left: 15px;
+    }
+
+    #gameGrid {
+        height: 390px;
+        width: 390px;
+    }
+
+    .box {
+        height: 130px;
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    #gameGrid {
+        height: 375px;
+        width: 375px;
+    }
+
+    .box {
+        height: 125px;
+        width: 125px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #gameGrid {
+        height: 360px;
+        width: 360px;
+    }
+
+    .box {
+        height: 120px;
+        width: 120px;
+    }
+}

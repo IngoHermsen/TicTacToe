@@ -20,32 +20,49 @@
     <div w3-include-html="templates/header.html"></div>
     <!-- header template END -->
 
-    <div class="d-flex justify-content-center mt-4 gameArea">
-        <div class="startScreen">
-            <form class="pt-5 d-flex flex-column align-items-center">
+    <div class="d-flex justify-content-center gameArea">
+        <div id="startScreen">
+            <form class="pt-5 mt-5 d-flex flex-column align-items-center">
                 <div class="mb-5">
-                    <span class="fs-4 me-2 pb-3">Type your own names or:</span>
+                    <span class="fs-4 me-2 pb-3">Type your own or</span>
                     <a class="startScreenButton fs-5 px-3 py-2" onclick="shuffleNames()" id="namesButton">
-                        create other names</a>
+                        create random names</a>
                 </div>
 
                 <div class="d-flex names">
-                    <input class="me-4 w-50 fs-4" onfocus="this.value=''; validateInput()" oninput="validateInput()"
+                    <input class="me-xl-4 me-sm-3 ms-3 me-3 fs-4" onfocus="this.value=''; validateInput()" oninput="validateInput()"
                         id="name1Input" type="text">
                     <b class="fs-2">vs.</b>
-                    <input class="ms-4 w-50 fs-4" onfocus="this.value=''; validateInput()" oninput="validateInput()"
+                    <input class="ms-xl-4 ms-sm-3 ms-3 me-3 fs-4" onfocus="this.value=''; validateInput()" oninput="validateInput()"
                         id="name2Input" type="text">
                 </div>
 
-                <a class="d-none startScreenButton fs-4 px-3 py-2 my-5" id="startButton">START GAME</a>
+                <a class="d-none startScreenButton fs-4 px-3 py-2 my-5" onclick="startGame()" id="startButton">START
+                    GAME</a>
 
 
             </form>
         </div>
-    </div>
-    <div class="d-none gameGrid">
 
-    </div>
+
+        <div id="game">
+            <div id="currentPlayerText" class="currentPlayer fs-1"></div>
+
+            <div id="gameGrid">
+                <div onclick="setLetter(1)" class=box id="box1"></div>
+                <div onclick="setLetter(2)" class=box id="box2"></div>
+                <div onclick="setLetter(3)" class=box id="box3"></div>
+                <div onclick="setLetter(4)" class=box id="box4"></div>
+                <div onclick="setLetter(5)" class=box id="box5"></div>
+                <div onclick="setLetter(6)" class=box id="box6"></div>
+                <div onclick="setLetter(7)" class=box id="box7"></div>
+                <div onclick="setLetter(8)" class=box id="box8"></div>
+                <div onclick="setLetter(9)" class=box id="box9"></div>
+            </div>
+            <div class="gameFooter w-100 d-flex justify-content-center align-items-center">
+                <a href="" onclick="resetGame()" class="px-4 py-2">New Game</a>
+            </div>
+        </div>
     </div>
 
     <!-- footer template -->

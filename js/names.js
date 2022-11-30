@@ -18,7 +18,7 @@ let names = [
         "name2": "Spock",
     },
     {
-        "name1": "Doc",
+        "name1": "Doc Brown",
         "name2": "Marty",
     },
     {
@@ -35,7 +35,7 @@ let names = [
     },
     {
         "name1": "Luke",
-        "name2": "Leia",
+        "name2": "Yoda",
     },
     {
         "name1": "Mickey",
@@ -50,7 +50,7 @@ let names = [
         "name2": "Sam",
     },
     {
-        "name1": "Scooby",
+        "name1": "Scooby Doo",
         "name2": "Shaggy",
     },
 ]
