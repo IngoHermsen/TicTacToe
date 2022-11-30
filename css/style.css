@@ -143,7 +143,7 @@ input {
     color: white;
 }
 
-.endScreenText span:first-child{
+.endScreenText span{
     font-size: 45px ;
 
 }
@@ -231,12 +231,13 @@ input {
 
 @media screen and (max-width: 375px) {
     #gameGrid {
-        height: 360px;
-        width: 360px;
+        height: 330px;
+        width: 330px;
     }
 
     .box {
-        height: 120px;
-        width: 120px;
+        font-size: 65px;
+        height: 110px;
+        width: 110px;
     }
 }

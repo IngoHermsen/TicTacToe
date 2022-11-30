@@ -7,6 +7,7 @@ let players = [{ "name": "", "letter": "O" },
 { "name": "", "letter": "X" }];
 
 let currentPlayerIndex;
+let freeBoxesCounter = 9;
 let winConstellations = [
     [1, 2, 3],
     [4, 5, 6],
@@ -105,6 +106,8 @@ function setLetter(boxNumber) {
 
     `
     selectedBox.classList.add('unselectable');
+    freeBoxesCounter--;
+    console.log(freeBoxesCounter);
     checkBoxContent();
 };
 
@@ -133,6 +136,8 @@ function checkGameStatus(winnerFound) {
     if (winnerFound) {
         makeAllBoxesUnselectable();
         showEndScreen();
+    } else if (freeBoxesCounter == 0) {
+        showTieEndScreen();
     } else {
         changePlayer();
     }
@@ -157,23 +162,34 @@ function renderDialogueHTML() {
 
     currentPlayerTextElement.innerHTML = /*html*/ `
 
-    <span class="playersName">${players[currentPlayerIndex]["name"]}</span>,<br>
-    make your <b class="fs-1 ps-3">${players[currentPlayerIndex]["letter"]}</b>
+    <span class="playersName">${players[currentPlayerIndex]["name"]}</span><br>
+    Make your <b class="fs-1 ps-3">${players[currentPlayerIndex]["letter"]}</b>
 
     `
 };
 
+
+function showTieEndScreen() {
+    let textElement = document.getElementById('currentPlayerText');
+
+    textElement.innerHTML = /*html*/ `
+    <div class="endScreenText">
+        <span>Nobody wins!</span>
+    </div>
+    `
+};
 
 function showEndScreen() {
     let textElement = document.getElementById('currentPlayerText');
 
     textElement.innerHTML = /*html*/ `
     <div class="endScreenText">
-        <span class="playersName">${players[currentPlayerIndex]["name"]} </span><br>
+        <span class="playersName">${players[currentPlayerIndex]["name"]} </span>
         <span>wins!!</span>
     </div>
     `
 };
+
 
 function resetGame() {
     toggleStartAndGameScreens();
